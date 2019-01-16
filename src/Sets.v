@@ -290,7 +290,7 @@ Qed.
 Lemma eq_bigcupr T U A (F : T -> set U) G : (forall x, F x <--> G x) ->
   \bigcup_(x in A) F x <--> \bigcup_(x in A) G x.
 Proof.
-  by move=> eq_FG t; split; apply: incl_bigcupr => {t} x t; rewrite (eq_FG x t).
+  by move=> eq_FG t; split; apply: incl_bigcupr => x {t} t; rewrite (eq_FG x t).
 Qed.
 
 Lemma incl_bigcupl T U A B (F : T -> set U) : A \subset B ->
